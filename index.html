@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GrandPapi's Trains</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="background-image"></div>
+	<header>
+		<h1>🫎 GrandPapi's Trains 🚂</h1>
+		<nav>
+			<a id="homeTab" class="active" onclick="changePage('home')">Home</a>
+			<a id="storyTab" onclick="changePage('story')">Our Story</a>
+			<a id="eventsTab" onclick="changePage('events')">Events</a>
+			<a id="locomotivesTab" onclick="changePage('locomotives')">Locomotives</a>
+			<a id="moreTab" onclick="changePage('more')">More</a>
+			<a id="todoTab" onclick="changePage('todo')">(TO-DO)</a>
+		</nav>
+	</header>
+	<main>
+		<div id="home">
+			<div class="slider" style=>
+				<a onclick="changePage('home')" class="slide">
+					<img src="content/images/halloween1.jpeg">
+					<div class="title">Welcome to Our Site</div>
+				</a>
+				<a onclick="changePage('story')" class="slide">
+					<img src="content/images/GPSittingByTrains.jpg">
+					<div class="title">Read Our Story!</div>
+				</a>
+				<a onclick="changePage('events')" class="slide">
+					<img src="content/images/halloween2.jpeg">
+					<div class="title">Halloween 2024!</div>
+				</a>
+				<a onclick="changePage('locomotives')" class="slide">
+					<img src="content/images/halloween1.jpeg">
+					<div class="title">Read About all our Engines</div>
+				</a>
+				<a onclick="changePage('more')" class="slide">
+					<img src="content/images/halloween2.jpeg">
+					<div class="title">Check this Out!</div>
+				</a>
+			</div>
+
+			<h1 style="text-align: center;"><br><br><br>Check out the Layout! Click Anywhere!</h1>
+			<div style="text-align: center;">(This isn't the track layout, this is Monoco but you get the idea)
+			</div>
+
+			<div class="static-image" onclick="openPopup()">
+				<img src="content/images/monoco.jpg" alt="Static Image">
+				<div class="title">Learn More</div>
+			</div>
+
+			<div class="darkBlueSection">
+				<div class="rows">
+					<div class="biz">Check out our Socials! (these don't work yet)</div>
+					<div class="logos">
+						<img src="content/images/socials/facebook.png" class="logo" alt="Facebook">
+						<img src="content/images/socials/x.png" class="logo" alt="X">
+						<img src="content/images/socials/instagram.png" class="logo" alt="Instagram">
+						<img src="content/images/socials/youtube.png" class="logo" alt="YouTube">
+						<img src="content/images/socials/tiktok.png" class="logo" alt="TikTok">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="story" class="hidden">Add a story about the history of the trains</div>
+
+		<div id="events" class="hidden">Add some fun information about what happens during halloween</div>
+
+		<div id="locomotives" class="hidden">
+			<div class="static-image-large">
+				<img src="content/images/trainWall.jpg" alt="Static Large Image">
+				<div class="large-title">All Locomotive Engines</div>
+			</div>
+			<h2>(I'm thinking here we show the train wall and all the trains we have with information about each one)
+			</h2>
+			<section class="all-items">
+				<div class="item-box"
+					onclick="openSmallPopup('Engine 1', 'info about engine 1', 'content/images/engines/engine1.jpeg')">
+					<img src="content/images/engines/engine1.jpeg">
+					<div class="item-title">Engine 1</div>
+				</div>
+				<div class="item-box"
+					onclick="openSmallPopup('Engine 2', 'info about engine 2', 'content/images/engines/engine2.jpeg')">
+					<img src="content/images/engines/engine2.jpeg">
+					<div class="item-title">Engine 2</div>
+				</div>
+				<div class="item-box"
+					onclick="openSmallPopup('Engine 3', 'info about engine 3', 'content/images/engines/engine3.jpeg')">
+					<img src="content/images/engines/engine3.jpeg">
+					<div class="item-title">Engine 3</div>
+				</div>
+				<div class="item-box"
+					onclick="openSmallPopup('Engine 4', 'info about engine 4', 'content/images/engines/engine4.jpeg')">
+					<img src="content/images/engines/engine4.jpeg">
+					<div class="item-title">Engine 4</div>
+				</div>
+				<div class="item-box"
+					onclick="openSmallPopup('Engine 5', 'info about engine 5', 'content/images/engines/engine5.jpeg')">
+					<img src="content/images/engines/engine5.jpeg">
+					<div class="item-title">Engine 5</div>
+				</div>
+			</section>
+
+			<div id="smallPopup" class="small-popup">
+				<div class="small-popup-content">
+					<span class="close-button" onclick="closeSmallPopup()">&times;</span>
+					<div class="small-popup-image">
+						<img src="" alt="Popup Image" id="popupImage">
+					</div>
+					<div class="small-popup-text">
+						<h3 id="popupTitle" style="color: black">Item Title</h3>
+						<p id="popupText" style="color: black">This is a description of the item.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="more" class="hidden">What else should we add?</div>
+
+		<div id="todo" class="hidden">
+			Give me (nico) ideas. What do you want to see? What do you like/dislike?
+			<h1><br>TO-DO LIST:</h1>
+			<li>Add 'our story' with images and text in #story</li>
+			<li>Add track layout image and functionality in #home</li>
+			<li>Add event information (Halloween) with images in #events</li>
+			<li>Add all engines and info in #locomotives</li>
+		</div>
+
+	</main>
+
+	<div id="popup" class="popup">
+		<div class="popup-content">
+			<span class="close-button" onclick="closePopup()">&times;</span>
+
+			<div class="popup-image">
+				<img src="content/images/background.jpg" alt="Popup Image">
+			</div>
+
+			<div class="popup-text">
+				<h2 style="color: black">You clicked ... somewhere</h2>
+				<p style="color: black">I don't know where yet. The idea here is there is a birds eye view of the track
+					with high-level
+					information about the different sections. Like "Kid's Area", "switchyard", "Upper Level", etc. When
+					the user clicks on that part of the track, a popup appears with more images and details about that
+					section. This is obviously a work in progress.</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
