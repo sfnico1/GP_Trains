@@ -4,14 +4,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GrandPapi's Trains</title>
+	<title>GrandPappy's Trains</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 	<div class="background-image"></div>
 	<header>
-		<h1>🫎 GrandPapi's Trains 🚂</h1>
+		<h1>🫎 GrandPappy's Trains 🚂</h1>
 		<nav>
 			<a id="homeTab" class="active" onclick="changePage('home')">Home</a>
 			<a id="storyTab" onclick="changePage('story')">Our Story</a>
@@ -69,9 +69,14 @@
 			</div>
 		</div>
 
-		<div id="story" class="hidden">Add a story about the history of the trains</div>
+		<div id="story" class="hidden">
+			<div style="margin-top: 0px">Add a story about the history of the trains</div>
+			<video src="content/videos/fulltour.MOV" autoplay loop muted playsinline></video>
+		</div>
 
-		<div id="events" class="hidden">Add some fun information about what happens during halloween</div>
+		<div id="events" class="hidden"><div style="margin-top: 0px">Add some fun information about what happens during halloween</div>
+			<video src="content/videos/station.MOV" autoplay loop muted playsinline></video>
+		</div>
 
 		<div id="locomotives" class="hidden">
 			<div class="static-image-large">
@@ -140,7 +145,7 @@
 			<span class="close-button" onclick="closePopup()">&times;</span>
 
 			<div class="popup-image">
-				<img src="content/images/background.jpg" alt="Popup Image">
+				<video src="content/videos/fulltour.MOV" autoplay loop muted playsinline>
 			</div>
 
 			<div class="popup-text">
