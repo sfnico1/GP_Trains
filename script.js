@@ -51,7 +51,31 @@ function changePage(input) {
 }
 
 
-function openPopup() {
+function openPopup(input) {
+    event.stopPropagation();
+    switch (input) {
+        case "up":
+            document.getElementById("popup-title").innerHTML = "You clicked on the Upper Lot!"
+            break
+        case "low":
+            document.getElementById("popup-title").innerHTML = "You clicked on the Lower Lot!"
+            break
+        case "kids":
+           document.getElementById("popup-title").innerHTML = "You clicked on the Kid's Area!"
+            break
+        case "switch":
+            document.getElementById("popup-title").innerHTML = "You clicked on the Switchyard!"
+            break
+        case "home":
+            document.getElementById("popup-title").innerHTML = "You clicked on our Childhood Home Area"
+            break
+        case "wall":
+            document.getElementById("popup-title").innerHTML = "You clicked on the Train Wall!"
+            break
+        default:
+            document.getElementById("popup-title").innerHTML = "You clicked ... somewhere"
+            break
+    }
     document.getElementById("popup").style.display = "flex";
 }
 
