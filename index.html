@@ -51,9 +51,16 @@
 			</div>
 
 			<div class="static-image" onclick="openPopup()">
-				<img src="content/images/layout.jpg" alt="Static Image">
+				<img src="content/images/layout.jpg" usemap="#layoutMap">
+				<map name="layoutMap" id="layoutMap">
+					<area shape="rect" coords="220,0,1000,240" href="javascript:void(0)" onclick="openPopup('up')">
+					<area shape="rect" coords="220,250,520,600" href="javascript:void(0)" onclick="openPopup('low')">
+					<area shape="rect" coords="0,350,250,600" href="javascript:void(0)" onclick="openPopup('kids')">
+					<area shape="rect" coords="600,220,850,470" href="javascript:void(0)" onclick="openPopup('switch')">
+					<area shape="rect" coords="650,450,1000,700" href="javascript:void(0)" onclick="openPopup('home')">
+					<area shape="rect" coords="20,700,520,770" href="javascript:void(0)" onclick="openPopup('wall')">
+				</map>
 			</div>
-
 			<div class="darkBlueSection">
 				<div class="rows">
 					<div class="biz">Check out our Socials! (these don't work yet)</div>
@@ -73,7 +80,8 @@
 			<video src="content/videos/fulltour.MOV" autoplay loop muted playsinline></video>
 		</div>
 
-		<div id="events" class="hidden"><div style="margin-top: 0px">Add some fun information about what happens during halloween</div>
+		<div id="events" class="hidden">
+			<div style="margin-top: 0px">Add some fun information about what happens during halloween</div>
 			<video src="content/videos/station.MOV" autoplay loop muted playsinline></video>
 		</div>
 
@@ -127,7 +135,10 @@
 			</div>
 		</div>
 
-		<div id="more" class="hidden"><h1>What else should we add?</h1><h2>what about a behind the scenes section? This would show the circuitry</h2></div>
+		<div id="more" class="hidden">
+			<h1>What else should we add?</h1>
+			<h2>what about a behind the scenes section? This would show the circuitry</h2>
+		</div>
 
 		<div id="todo" class="hidden">
 			Give me (nico) ideas. What do you want to see? What do you like/dislike?
@@ -149,8 +160,8 @@
 			</div>
 
 			<div class="popup-text">
-				<h2 style="color: black">You clicked ... somewhere</h2>
-				<p style="color: black">I don't know where yet. The idea here is there is a birds eye view of the track
+				<h2 id="popup-title" style="color: black">You clicked ... somewhere</h2>
+				<p style="color: black">The idea here is there is a birds eye view of the track
 					with high-level
 					information about the different sections. Like "Kid's Area", "switchyard", "Upper Level", etc. When
 					the user clicks on that part of the track, a popup appears with more images and details about that
