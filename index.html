@@ -9,9 +9,11 @@
 </head>
 
 <body>
-	<div class="background-image"></div>
+	<div class="background"></div>
 	<header>
 		<h1>🫎 GrandPappy's Trains 🚂</h1>
+		<h3>(This site is currently in development, meaning its a bit messy right now)</h3>
+		<h4>(Last updated: Nov. 16, 24)</h4>
 		<nav>
 			<a id="homeTab" class="active" onclick="changePage('home')">Home</a>
 			<a id="storyTab" onclick="changePage('story')">Our Story</a>
@@ -23,7 +25,7 @@
 	</header>
 	<main>
 		<div id="home">
-			<div class="slider" style=>
+			<div class="slidingArea">
 				<a onclick="changePage('home')" class="slide">
 					<img src="content/images/halloween1.jpeg">
 					<div class="title">Welcome to Our Site</div>
@@ -46,30 +48,40 @@
 				</a>
 			</div>
 
-			<h1 style="text-align: center;"><br><br><br>Check out the Layout! Click Anywhere!</h1>
+			<h1 style="text-align: center; margin-top: 10vh;">Check out the Layout! Click Anywhere!</h1>
 			<div style="text-align: center;">(This is a quick drawing of the layout, it'll get better over time)
 			</div>
 
-			<div class="static-image" onclick="openPopup()">
-				<img src="content/images/layout.jpg" usemap="#layoutMap">
+			<div id="layout-image" class="layout-image" onclick="openPopup()">
+				<img src="content/images/layout.jpg" usemap="#layoutMap" id="imagehsfg">
 				<map name="layoutMap" id="layoutMap">
-					<area shape="rect" coords="220,0,1000,240" href="javascript:void(0)" onclick="openPopup('up')">
-					<area shape="rect" coords="220,250,520,600" href="javascript:void(0)" onclick="openPopup('low')">
-					<area shape="rect" coords="0,350,250,600" href="javascript:void(0)" onclick="openPopup('kids')">
-					<area shape="rect" coords="600,220,850,470" href="javascript:void(0)" onclick="openPopup('switch')">
-					<area shape="rect" coords="650,450,1000,700" href="javascript:void(0)" onclick="openPopup('home')">
-					<area shape="rect" coords="20,700,520,770" href="javascript:void(0)" onclick="openPopup('wall')">
+					<area id="upArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('up')">
+					<area id="lowArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('low')">
+					<area id="kidsArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('kids')">
+					<area id="switchArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('switch')">
+					<area id="homeArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('home')">
+					<area id="wallArea" shape="rect" coords="0,0,0,0" href="javascript:void(0)" onclick="openPopup('wall')">
 				</map>
 			</div>
-			<div class="darkBlueSection">
+			<div class="logoSection">
 				<div class="rows">
-					<div class="biz">Check out our Socials! (these don't work yet)</div>
+					<div class="logoSection-text">Check out our Socials! (no accounts yet)</div>
 					<div class="logos">
-						<img src="content/images/socials/facebook.png" class="logo" alt="Facebook">
-						<img src="content/images/socials/x.png" class="logo" alt="X">
-						<img src="content/images/socials/instagram.png" class="logo" alt="Instagram">
-						<img src="content/images/socials/youtube.png" class="logo" alt="YouTube">
-						<img src="content/images/socials/tiktok.png" class="logo" alt="TikTok">
+						<a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+							<img src="content/images/socials/facebook.png" class="logo">
+						</a>
+						<a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+							<img src="content/images/socials/x.png" class="logo">
+						</a>
+						<a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+							<img src="content/images/socials/instagram.png" class="logo">
+						</a>
+						<a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+							<img src="content/images/socials/youtube.png" class="logo">
+						</a>
+						<a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+							<img src="content/images/socials/tiktok.png" class="logo">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -86,50 +98,50 @@
 		</div>
 
 		<div id="locomotives" class="hidden">
-			<div class="static-image-large">
-				<img src="content/images/trainWall.jpg" alt="Static Large Image">
-				<div class="large-title">All Locomotive Engines</div>
+			<div class="trainWall">
+				<img src="content/images/trainWall.jpg">
+				<div class="trainWall-title">All Locomotive Engines</div>
 			</div>
 			<h2>(I'm thinking here we show the train wall and all the trains we have with information about each one)
 			</h2>
 			<h2 style="text-align: center;">Click on an Engine to learn more about it!</h2>
-			<section class="all-items">
-				<div class="item-box"
+			<section class="allEngines">
+				<div class="engine-box"
 					onclick="openSmallPopup('Engine 1', 'info about engine 1', 'content/images/engines/engine1.jpeg')">
 					<img src="content/images/engines/engine1.jpeg">
-					<div class="item-title">Engine 1</div>
+					<div class="engine-title">Engine 1</div>
 				</div>
-				<div class="item-box"
+				<div class="engine-box"
 					onclick="openSmallPopup('Engine 2', 'info about engine 2', 'content/images/engines/engine2.jpeg')">
 					<img src="content/images/engines/engine2.jpeg">
-					<div class="item-title">Engine 2</div>
+					<div class="engine-title">Engine 2</div>
 				</div>
-				<div class="item-box"
+				<div class="engine-box"
 					onclick="openSmallPopup('Engine 3', 'info about engine 3', 'content/images/engines/engine3.jpeg')">
 					<img src="content/images/engines/engine3.jpeg">
-					<div class="item-title">Engine 3</div>
+					<div class="engine-title">Engine 3</div>
 				</div>
-				<div class="item-box"
+				<div class="engine-box"
 					onclick="openSmallPopup('Engine 4', 'info about engine 4', 'content/images/engines/engine4.jpeg')">
 					<img src="content/images/engines/engine4.jpeg">
-					<div class="item-title">Engine 4</div>
+					<div class="engine-title">Engine 4</div>
 				</div>
-				<div class="item-box"
+				<div class="engine-box"
 					onclick="openSmallPopup('Engine 5', 'info about engine 5', 'content/images/engines/engine5.jpeg')">
 					<img src="content/images/engines/engine5.jpeg">
-					<div class="item-title">Engine 5</div>
+					<div class="engine-title">Engine 5</div>
 				</div>
 			</section>
 
-			<div id="smallPopup" class="small-popup">
-				<div class="small-popup-content">
-					<span class="close-button" onclick="closeSmallPopup()">&times;</span>
-					<div class="small-popup-image">
-						<img src="" alt="Popup Image" id="popupImage">
+			<div id="enginePopup" class="enginePopup">
+				<div class="enginePopup-content">
+					<span class="enginePopup-close" onclick="closeSmallPopup()">&times;</span>
+					<div class="enginePopup-Image">
+						<img src="" id="enginePopup-image">
 					</div>
-					<div class="small-popup-text">
-						<h3 id="popupTitle" style="color: black">Item Title</h3>
-						<p id="popupText" style="color: black">This is a description of the item.</p>
+					<div class="enginePopup-Text">
+						<h3 id="enginePopup-title">Item Title</h3>
+						<p id="enginePopup-text">This is a description of the item.</p>
 					</div>
 				</div>
 			</div>
@@ -138,6 +150,7 @@
 		<div id="more" class="hidden">
 			<h1>What else should we add?</h1>
 			<h2>what about a behind the scenes section? This would show the circuitry</h2>
+			<h2>Add a ride-along video? Put a camera on a train and let it film arond the track</h2>
 		</div>
 
 		<div id="todo" class="hidden">
@@ -151,16 +164,16 @@
 
 	</main>
 
-	<div id="popup" class="popup">
-		<div class="popup-content">
-			<span class="close-button" onclick="closePopup()">&times;</span>
+	<div id="layoutPopup" class="hidden">
+		<div class="layoutPopup-content">
+			<span class="layoutPopup-close" onclick="closePopup()">&times;</span>
 
-			<div class="popup-image">
+			<div class="layoutPopup-image">
 				<video src="content/videos/fulltour.MOV" autoplay loop muted playsinline>
 			</div>
 
-			<div class="popup-text">
-				<h2 id="popup-title" style="color: black">You clicked ... somewhere</h2>
+			<div class="layoutPopup-text">
+				<h2 id="layoutPopup-title" style="color: black">You clicked ... somewhere</h2>
 				<p style="color: black">The idea here is there is a birds eye view of the track
 					with high-level
 					information about the different sections. Like "Kid's Area", "switchyard", "Upper Level", etc. When
