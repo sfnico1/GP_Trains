@@ -1,6 +1,7 @@
 
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
+slides[currentSlide].classList.add('active');
 
 function showNextSlide() {
     slides[currentSlide].classList.remove('active');
@@ -12,14 +13,34 @@ function showNextSlide() {
     slides[currentSlide].classList.add('active');
 }
 
-slides[currentSlide].classList.add('active');
-
 setInterval(showNextSlide, 3000);
+
+function updateAreaCoords() {
+    const image = document.getElementById('layout-image');
+    const imgWidth = image.clientWidth;
+    const imgHeight = image.clientHeight;
+
+    let areas = ['upArea', 'lowArea', 'kidsArea', 'switchArea', 'homeArea', 'wallArea']
+    let coords = [[.22, 0, 1, .30], [.22, .35, .52, .80], [0, .50, .25, .75], [.60, .31, .85, .57], [.65, .60, 1, .85], [.02, .90, .52, 1]]
+
+    areas.forEach((id, index) => {
+        let area = document.getElementById(id);
+
+        let x1 = imgWidth * coords[index][0];
+        let y1 = imgHeight * coords[index][1];
+        let x2 = imgWidth * coords[index][2];
+        let y2 = imgHeight * coords[index][3];
+        area.setAttribute('coords', `${x1},${y1},${x2},${y2}`);
+    })
+}
+
+window.onload = updateAreaCoords;
+window.onresize = updateAreaCoords;
 
 
 function changePage(input) {
     let tabs = ["home", "story", "events", "locomotives", "more", "todo"]
-    tabs.forEach(tab =>{
+    tabs.forEach(tab => {
         document.getElementById(tab).classList.add("hidden")
         document.getElementById(tab + "Tab").classList.remove("active")
     })
@@ -55,42 +76,42 @@ function openPopup(input) {
     event.stopPropagation();
     switch (input) {
         case "up":
-            document.getElementById("popup-title").innerHTML = "You clicked on the Upper Lot!"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on the Upper Lot!"
             break
         case "low":
-            document.getElementById("popup-title").innerHTML = "You clicked on the Lower Lot!"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on the Lower Lot!"
             break
         case "kids":
-           document.getElementById("popup-title").innerHTML = "You clicked on the Kid's Area!"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on the Kid's Area!"
             break
         case "switch":
-            document.getElementById("popup-title").innerHTML = "You clicked on the Switchyard!"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on the Switchyard!"
             break
         case "home":
-            document.getElementById("popup-title").innerHTML = "You clicked on our Childhood Home Area"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on our Childhood Home Area"
             break
         case "wall":
-            document.getElementById("popup-title").innerHTML = "You clicked on the Train Wall!"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked on the Train Wall!"
             break
         default:
-            document.getElementById("popup-title").innerHTML = "You clicked ... somewhere"
+            document.getElementById("layoutPopup-title").innerHTML = "You clicked ... somewhere"
             break
     }
-    document.getElementById("popup").style.display = "flex";
+    document.getElementById("layoutPopup").style.display = "flex";
 }
 
 function closePopup() {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("layoutPopup").style.display = "none";
 }
 
 function openSmallPopup(title, text, imageUrl) {
-    document.getElementById("popupTitle").textContent = title;
-    document.getElementById("popupText").textContent = text
-    document.getElementById("popupImage").src = imageUrl;
-    document.getElementById("smallPopup").style.display = "flex";
+    document.getElementById("enginePopup-title").textContent = title;
+    document.getElementById("enginePopup-text").textContent = text
+    document.getElementById("enginePopup-image").src = imageUrl;
+    document.getElementById("enginePopup").style.display = "flex";
 }
 
 function closeSmallPopup() {
-    document.getElementById("smallPopup").style.display = "none";
+    document.getElementById("enginePopup").style.display = "none";
 }
 
