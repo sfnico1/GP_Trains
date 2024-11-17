@@ -16,6 +16,10 @@ function showNextSlide() {
 setInterval(showNextSlide, 3000);
 
 function updateAreaCoords() {
+    let headerHeight = document.querySelector('header').offsetHeight;
+    headerHeight += 20
+    document.querySelector('main').style.marginTop = `${headerHeight}px`;
+
     const image = document.getElementById('layout-image');
     const imgWidth = image.clientWidth;
     const imgHeight = image.clientHeight;
