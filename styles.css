@@ -64,15 +64,11 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51);
+    background-color: rgba(51, 51, 51, 1);
     padding: 1.5rem;
     text-align: center;
     color: #fff;
     z-index: 2;
-}
-
-main {
-    padding-top: 10rem;
 }
 
 header h1 {
@@ -95,8 +91,8 @@ header nav a.active {
 .slidingArea {
     position: relative;
     width: 100%;
-    max-width: 75vw;
-    height: 65vh;
+    aspect-ratio: 1.5/1;
+    max-width: 80vw;
     margin: 1.5rem auto;
     overflow: hidden;
 }
@@ -338,4 +334,8 @@ header nav a.active {
 .logo {
     width: 3rem;
     height: auto;
+}
+
+video {
+    max-width: 500px;
 }
