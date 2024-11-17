@@ -1,4 +1,4 @@
-/* Basic reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,42 @@
     color: white;
 }
 
-.background-image {
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 992px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 576px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 501px) {
+	html {
+		font-size: 11px;
+	}
+}
+
+.hidden {
+    display: none;
+}
+
+.background {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,46 +50,41 @@
     background-image: url('content/images/background.jpg');
     background-size: cover;
     background-position: center;
-    filter: grayscale(30%) brightness(0.5); /* Adjust filter as desired */
-    z-index: -1; /* Places background behind everything else */
+    filter: grayscale(30%) brightness(0.5);
+    z-index: -1;
 }
 
-/* Make sure header and other content display above background */
 header, main, .popup {
     position: relative;
-    z-index: 1; /* Ensures content is on top of the background */
+    z-index: 1;
 }
 
-/* Style the header */
 header {
-    position: fixed; /* Fixes the header at the top of the page */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51); /* Semi-transparent background */
-    padding: 20px;
+    background-color: rgba(51, 51, 51);
+    padding: 1.5rem;
     text-align: center;
     color: #fff;
-    z-index: 10; /* Ensures the header stays above other elements */
+    z-index: 2;
 }
 
-/* Add padding-top to the main content to prevent overlap with fixed header */
 main {
-    padding-top: 120px; /* Adjust to match the header height */
+    padding-top: 10rem;
 }
 
-/* Style the title */
 header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* Style the navigation links */
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    margin: 0 1rem;
+    font-size: 1.5rem;
 }
 
 header nav a:hover,
@@ -62,18 +92,15 @@ header nav a.active {
     color: #ff6347;
 }
 
-
-/* Slider container */
-.slider {
+.slidingArea {
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    height: 600px;
-    margin: 20px auto;
+    max-width: 75vw;
+    height: 65vh;
+    margin: 1.5rem auto;
     overflow: hidden;
 }
 
-/* Individual slides */
 .slide {
     position: absolute;
     width: 100%;
@@ -82,78 +109,64 @@ header nav a.active {
     transition: opacity 1s ease, transform 1s ease;
 }
 
-/* Active slide style */
 .slide.active {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Slide out to the left */
 .slide.out {
     transform: translateX(-100%);
 }
 
-/* Image styling */
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Title overlay */
 .slide .title {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 1.5rem;
+    left: 1.5rem;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5); /* Background overlay for the text */
-    padding: 10px;
-    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
-/* Style for the static clickable image section */
-.static-image {
+.layout-image {
     position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 100%;
-    max-width: 1000px;
-    margin: 20px auto;
+    width: 80vw;
+    max-width: 100vh;
+    height: auto;
+    margin: 1.5rem auto;
     overflow: hidden;
     cursor: pointer;
-    margin-bottom: 100px;
+    margin-bottom: 10vh;
 }
 
-/* Styling for the static image */
-.static-image img {
+.layout-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.hidden {
+#layoutPopup {
     display: none;
-}
-
-/* Popup background */
-.popup {
-    display: none; /* Initially hidden */
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     align-items: center;
     justify-content: center;
 }
 
-/* Popup content box */
-.popup-content {
+.layoutPopup-content {
     display: flex;
     width: 80%;
-    max-width: 1200px;
     height: 80%;
     background: #fff;
     border-radius: 8px;
@@ -161,106 +174,96 @@ header nav a.active {
     position: relative;
 }
 
-/* Image section on the left side */
-.popup-image {
+.layoutPopup-image {
     flex: 1;
     height: 100%;
 }
 
-.popup-image img {
+.layoutPopup-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Text section on the right side */
-.popup-text {
+.layoutPopup-text {
     flex: 1;
-    padding: 20px;
+    padding: 1.5rem;
     overflow-y: auto;
 }
 
-.popup-text h2 {
+.layoutPopup-text h2 {
     margin-top: 0;
 }
 
-.popup-text p {
+.layoutPopup-text p {
     line-height: 1.5;
 }
 
-/* Close button */
-.close-button {
+.layoutPopup-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
     cursor: pointer;
     color: #333;
 }
 
-/* New static image container */
-.static-image-large {
+.trainWall {
     position: relative;
     margin: 50px auto;
-    max-width: 1200px;
-    height: 400px;
+    max-width: 90vw;
+    height: 40vh;
     overflow: hidden;
 }
 
-/* Image within the container */
-.static-image-large img {
+.trainWall img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Large title styling */
-.static-image-large .large-title {
+.trainWall-title {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 20px; /* Offset from the left */
-    transform: translateY(-50%); /* Center the text vertically */
-    font-size: 48px; /* Larger font size */
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    font-size: 4rem;
     font-weight: bold;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
-/* All Items Section */
-.all-items {
+.allEngines {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px;
+    gap: 1rem;
+    padding: 1.5rem;
     justify-content: center;
 }
 
-/* Each item box */
-.item-box {
-    width: 180px;
-    height: 180px;
+.engine-box {
+    width: 11rem;
+    aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-align: center;
 }
 
-.item-box img {
+.engine-box img {
     width: 100%;
-    height: 120px;
+    height: auto;
     object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
-.item-title {
-    padding: 10px;
-    font-size: 16px;
+.engine-title {
+    padding: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-/* Small Popup */
-.small-popup {
+.enginePopup {
     display: none;
     position: fixed;
     top: 0;
@@ -273,61 +276,66 @@ header nav a.active {
     z-index: 100;
 }
 
-.small-popup-content {
-    width: 400px;
+.enginePopup-content {
     background-color: #fff;
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 8px;
     position: relative;
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
-.small-popup-image img {
-    width: 120px;
-    height: 120px;
+.enginePopup-Image img {
+    width: 12rem;
+    height: 12rem;
     object-fit: cover;
     border-radius: 6px;
 }
 
-.small-popup-text h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.enginePopup-Text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
 }
 
-.close-button {
+.enginePopup-Text p{
+    color: black
+}
+
+.enginePopup-close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
     cursor: pointer;
+    color: black;
 }
 
-.darkBlueSection {
+.logoSection {
     background-color: rgba(51, 51, 51, 0.9);
     display: flex;
-    height: 150px;
+    height: 10rem;
     width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px; /* Optional space above the footer */
+    padding: 1rem;
+    margin-top: 1.5rem;
 }
 
-.biz {
-    font-size: 16px;
+.logoSection-text {
+    font-size: 1rem;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .logos {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .logo {
-    width: 35px;
+    width: 3rem;
     height: auto;
 }
